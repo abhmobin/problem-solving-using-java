@@ -4,7 +4,7 @@ public class PrintingPatterns{
         //rectanglePattern(5,7);
         //hollowRengtangle(5,7);
         //halfPyramid(5);
-        invertedHalfPyramid(5);
+        invertedHalfPyramidWithNumbers(5);
     }
 
     private static void rectanglePattern(int length, int width){
@@ -50,6 +50,49 @@ public class PrintingPatterns{
         for (int i = n; i>=1; i--){
             for (int j=1; j<=i; j++){
                 System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void rotatedInvertedHalfPyramid(int n){
+        for (int i = 1; i<=n; i++){
+            for (int j= 1; j<=n; j++){
+                if(j <= n-i){
+                    System.out.print(" ");
+                }else{
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+
+        // another way
+        for (int i=1; i<=n; i++){
+            for (int j=1; j<=n-i; j++){
+              System.out.print("%");
+            }
+
+            for (int j=1; j<=i; j++){
+               System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void halfPyramidWithNumbers(int n){
+        for (int i = 1; i<= n; i++){
+            for (int j = 1; j<=i; j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    private static void invertedHalfPyramidWithNumbers(int n){
+        for(int i=n; i>=1; i--){
+            for(int j=1; j<=i; j++){
+                System.out.print(j);
             }
             System.out.println();
         }
