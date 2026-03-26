@@ -1,10 +1,7 @@
 
 public class PrintingPatterns{
     public static void main(String[] args) {
-        //rectanglePattern(5,7);
-        //hollowRengtangle(5,7);
-        //halfPyramid(5);
-        invertedHalfPyramidWithNumbers(5);
+        hollowRhombus(5);
     }
 
     private static void rectanglePattern(int length, int width){
@@ -93,6 +90,97 @@ public class PrintingPatterns{
         for(int i=n; i>=1; i--){
             for(int j=1; j<=i; j++){
                 System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    private static void floyadsTriangle(int n){
+        int number = 1;
+
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=i; j++){
+                System.out.print(number +  " ");
+                number++;
+            }
+            System.err.println();
+        }
+    }
+
+    private static void O1Triangle(int n){
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=i; j++){
+                if((i+j)%2 == 0){
+                    System.out.print("1 ");
+                }else{
+                    System.out.print("0 ");
+                }
+            }
+            System.err.println();
+        }
+    }
+
+
+    private static void butterfly(int n){
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=i; j++){
+                System.out.print("* ");
+            }
+
+            for(int j=1; j<=2*(n-i); j++){
+                System.out.print("  ");
+            }
+
+            for(int j=1; j<=i; j++){
+                System.out.print(" *");
+            }
+
+            System.out.println();
+        }
+        for(int i=n; i>=1; i--){
+            for(int j=1; j<=i; j++){
+                System.out.print("* ");
+            }
+            
+            for(int j=1; j<=2*(n-i); j++){
+                System.out.print("  ");
+            }
+
+            for(int j=1; j<=i; j++){
+                System.out.print(" *");
+            }
+
+            System.out.println();
+        }
+    }
+
+    private static void solidRhombus(int n){
+        for(int i=1; i<=n; i++){
+            //space
+            int space = n-i;
+            for(int j=1; j<=space; j++){
+                System.out.print("  ");
+            }
+
+            // stars
+            for(int j=1; j<=n; j++){
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void hollowRhombus(int n){
+        for(int i=1; i<=n; i++){
+            //space
+            int space = n-i;
+            for(int j=1; j<=space; j++){
+                System.out.print("  ");
+            }
+
+            // stars
+            for(int j=1; j<=n; j++){
+                System.out.print(" *");
             }
             System.out.println();
         }
